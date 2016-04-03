@@ -4,6 +4,9 @@
     <!-- Facebook App -->
     <string name="facebook_app_id">1087508557955275</string>
 
+    <!-- SendBird App -->
+    <string name="sendbird_app_id">753D8215-F096-46E0-A9EC-C0D7B2A76FDC</string>
+
     <!-- Strings related to user profile for facebook -->
     <string name="name">Name</string>
     <string name="first_name">First Name</string>

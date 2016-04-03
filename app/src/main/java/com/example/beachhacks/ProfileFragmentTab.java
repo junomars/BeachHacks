@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.facebook.Profile;
 
 import java.io.InputStream;
 
@@ -27,7 +26,7 @@ import java.io.InputStream;
  * create an instance of this fragment.
  */
 public class ProfileFragmentTab extends Fragment {
-    private Profile profile;
+    private OnFragmentInteractionListener interactionListener;
 
     private TextView name;
     private TextView fname;
@@ -97,14 +96,28 @@ public class ProfileFragmentTab extends Fragment {
         return view;
     }
 
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (interactionListener != null) {
+            interactionListener.onFragmentInteraction(uri);
+        }
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        if (context instanceof ProfileFragmentTab.OnFragmentInteractionListener) {
+            interactionListener = (ProfileFragmentTab.OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
+        interactionListener = null;
     }
 
     /**

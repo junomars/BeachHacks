@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragmentTab">
 
-    <!-- TODO: Update blank fragment layout -->
-
-
     <TableLayout
         android:id="@+id/profile_view"
         android:layout_width="wrap_content"
