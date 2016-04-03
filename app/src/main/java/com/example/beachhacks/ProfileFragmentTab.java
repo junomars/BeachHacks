@@ -3,7 +3,6 @@ package com.example.beachhacks;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,18 +15,12 @@ import android.widget.TextView;
 
 import java.io.InputStream;
 
-
 /**
  * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ProfileFragmentTab.OnFragmentInteractionListener} interface
- * to handle interaction events.
  * Use the {@link ProfileFragmentTab#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class ProfileFragmentTab extends Fragment {
-    private OnFragmentInteractionListener interactionListener;
-
     private TextView name;
     private TextView fname;
     private TextView lname;
@@ -96,43 +89,14 @@ public class ProfileFragmentTab extends Fragment {
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (interactionListener != null) {
-            interactionListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof ProfileFragmentTab.OnFragmentInteractionListener) {
-            interactionListener = (ProfileFragmentTab.OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        interactionListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {

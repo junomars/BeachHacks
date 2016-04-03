@@ -33,11 +33,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--Add this-->
-        <activity android:name="com.facebook.FacebookActivity"
+        <!-- Add this -->
+        <activity
+            android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ChatListActivity"
+            android:label="@string/title_chat_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ChatDetailActivity"
+            android:label="@string/title_chat_detail"
+            android:parentActivityName=".ChatListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.beachhacks.ChatListActivity" />
+        </activity>
     </application>
 
 </manifest>

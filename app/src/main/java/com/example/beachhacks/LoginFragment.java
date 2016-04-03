@@ -67,6 +67,7 @@ public class LoginFragment extends Fragment {
                                     // Create a bundle
                                     Bundle userInfo = new Bundle();
                                     try {
+                                        userInfo.putString("id", object.getString("id"));
                                         userInfo.putString("name", object.getString("name"));
                                         userInfo.putString("first_name", object.getString("first_name"));
                                         userInfo.putString("last_name", object.getString("last_name"));
