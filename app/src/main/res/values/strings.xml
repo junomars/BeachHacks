@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BeachHacks</string>
+
+    <!-- Facebook App -->
+    <string name="facebook_app_id">1087508557955275</string>
+
+    <!-- Strings related to user profile for facebook -->
+    <string name="name">Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="age_range">Age Range</string>
+    <string name="gender">Gender</string>
+    <string name="locale">Locale</string>
+    <string name="picture">Picture</string>
+
+</resources>
